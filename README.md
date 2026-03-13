@@ -1,4 +1,4 @@
-# Company Knowledge Base Chatbot (RAG + LangChain)
+# QnA Generation Chatbot (RAG + LangChain)
 
 This project is a **Retrieval-Augmented Generation (RAG) chatbot** that allows users to upload documents (PDFs) and ask questions about them. The system retrieves relevant information from the uploaded documents and generates answers using a local language model.
 
