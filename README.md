@@ -1,12 +1,12 @@
 # Company Knowledge Base Chatbot (RAG + LangChain)
 
-This project is a **Retrieval-Augmented Generation (RAG) chatbot** that allows users to upload company documents (PDFs) and ask questions about them. The system retrieves relevant information from the uploaded documents and generates answers using a local language model.
+This project is a **Retrieval-Augmented Generation (RAG) chatbot** that allows users to upload documents (PDFs) and ask questions about them. The system retrieves relevant information from the uploaded documents and generates answers using a local language model.
 
 ---
 
 ## Features
 
-- Upload company documents (PDF)
+- Upload documents (PDF)
 - Ask questions about the uploaded documents
 - Retrieval-Augmented Generation (RAG)
 - Uses vector embeddings for semantic search
@@ -43,3 +43,45 @@ This project is a **Retrieval-Augmented Generation (RAG) chatbot** that allows u
 ---
 
 ## Embedding Model Used
+
+This project uses the HuggingFace embedding model:
+sentence-transformers/all-MiniLM-L6-v2
+
+This model converts text into numerical vectors (embeddings) that capture the semantic meaning of the text. 
+These embeddings allow the vector database to perform semantic search and retrieve the most relevant document chunks for a given query.
+
+This model was chosen because it is lightweight, fast, and widely used for semantic search and Retrieval-Augmented Generation (RAG) systems.
+
+---
+
+## LLM Used
+
+This project uses a local Large Language Model served through Ollama.
+
+Model used:
+phi3
+
+When a user asks a question, the system retrieves the most relevant document chunks and sends them along with the user query to the LLM. 
+The LLM then generates an answer strictly based on the retrieved context.
+
+---
+
+## How to Run the Project
+
+1. Clone the repository
+
+git clone https://github.com/shubhangiisankar/rag-document-qa-chatbot.git
+
+2. Navigate to the project folder
+
+cd rag-document-qa-chatbot
+
+3. Install dependencies
+
+pip install -r requirements.txt
+
+4. Run the Streamlit application
+
+streamlit run app.py
+
+5. Upload PDF documents and start asking questions.
